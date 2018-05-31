@@ -1,0 +1,14 @@
+FROM elasticsearch-curator:latest
+
+ADD ./entrypoint.sh /entrypoint.sh
+
+WORKDIR /usr/share/curator
+
+RUN chmod +x /entrypoint.sh
+
+#run every minute
+ENV CRON */1  *  *  * *
+ENV CONFIG_FILE /usr/share/curator/config/curator.yml
+ENV COMMAND /usr/share/curator/config/actions.yml
+
+ENTRYPOINT ["/entrypoint.sh"]
