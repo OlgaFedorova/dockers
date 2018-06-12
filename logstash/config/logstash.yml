@@ -1,0 +1,5 @@
+http.host: "192.168.0.101"
+path.config: /usr/share/logstash/pipeline
+path.data: /usr/share/logstash/data
+path.logs: /usr/share/logstash/logs
+xpack.monitoring.elasticsearch.url: "http://192.168.0.101:9200"
